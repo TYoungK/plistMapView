@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E52C67751F734BC2003D3AD2 /* zenos.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E52C67721F734BC2003D3AD2 /* zenos.jpeg */; };
+		E52C67761F734BC2003D3AD2 /* zenos2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = E52C67731F734BC2003D3AD2 /* zenos2.jpeg */; };
+		E52C67771F734BC2003D3AD2 /* zenos3.png in Resources */ = {isa = PBXBuildFile; fileRef = E52C67741F734BC2003D3AD2 /* zenos3.png */; };
 		E54F79F21F6F9C7700B48F68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F79F11F6F9C7700B48F68 /* AppDelegate.swift */; };
 		E54F79F41F6F9C7700B48F68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54F79F31F6F9C7700B48F68 /* ViewController.swift */; };
 		E54F79F71F6F9C7700B48F68 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54F79F51F6F9C7700B48F68 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E52C67721F734BC2003D3AD2 /* zenos.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = zenos.jpeg; path = ../../zenos.jpeg; sourceTree = "<group>"; };
+		E52C67731F734BC2003D3AD2 /* zenos2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = zenos2.jpeg; path = ../../zenos2.jpeg; sourceTree = "<group>"; };
+		E52C67741F734BC2003D3AD2 /* zenos3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zenos3.png; path = ../../zenos3.png; sourceTree = "<group>"; };
 		E54F79EE1F6F9C7700B48F68 /* Mapview3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mapview3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E54F79F11F6F9C7700B48F68 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E54F79F31F6F9C7700B48F68 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +66,9 @@
 		E54F79F01F6F9C7700B48F68 /* Mapview3 */ = {
 			isa = PBXGroup;
 			children = (
+				E52C67721F734BC2003D3AD2 /* zenos.jpeg */,
+				E52C67731F734BC2003D3AD2 /* zenos2.jpeg */,
+				E52C67741F734BC2003D3AD2 /* zenos3.png */,
 				E54F79F11F6F9C7700B48F68 /* AppDelegate.swift */,
 				E54F79F31F6F9C7700B48F68 /* ViewController.swift */,
 				E54F79F51F6F9C7700B48F68 /* Main.storyboard */,
@@ -139,8 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				E54F79FC1F6F9C7700B48F68 /* LaunchScreen.storyboard in Resources */,
+				E52C67771F734BC2003D3AD2 /* zenos3.png in Resources */,
 				E54F79F91F6F9C7700B48F68 /* Assets.xcassets in Resources */,
+				E52C67751F734BC2003D3AD2 /* zenos.jpeg in Resources */,
 				E54F7A071F6FA26E00B48F68 /* ViewPoint.plist in Resources */,
+				E52C67761F734BC2003D3AD2 /* zenos2.jpeg in Resources */,
 				E54F79F71F6F9C7700B48F68 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

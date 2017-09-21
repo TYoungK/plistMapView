@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-
+var picarray = [String]()
 class ViewController: UIViewController,MKMapViewDelegate {
     
     @IBOutlet weak var map: MKMapView!
@@ -28,8 +28,10 @@ class ViewController: UIViewController,MKMapViewDelegate {
                 let long = (item as AnyObject).value(forKey: "long")
                 let title = (item as AnyObject).value(forKey: "title")
                 let subtitle = (item as AnyObject).value(forKey: "subtitle")
+                let pic = (item as AnyObject).value(forKeyPath: "pic")
                 let annotation = MKPointAnnotation()
-                
+                let mypic = pic as! String
+                picarray.append(mypic)
                 print("lat = \(String(describing: lat))")
                 
                 let myLat = (lat as! NSString).doubleValue
@@ -44,12 +46,57 @@ class ViewController: UIViewController,MKMapViewDelegate {
                 
                 annotations.append(annotation)
                 map.delegate = self
+                
             }
         }
         map.showAnnotations(annotations, animated: true)
         map.addAnnotations(annotations)
     }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "myPin"
+        
+        // an already allocated annotation view
+        var annotationView = map.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            let btn = UIButton(type: .detailDisclosure)
+            annotationView?.rightCalloutAccessoryView = btn
+            //annotationView?.pinTintColor = UIColor.green
+            annotationView?.animatesDrop = true
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
+        if annotation.title! == "DIT" {
+            leftIconView.image = UIImage(named:picarray[0] )
+            annotationView?.pinTintColor = UIColor.green
+        }
+        if annotation.title! == "부산시민공원" {
+            leftIconView.image = UIImage(named:picarray[1] )
+            annotationView?.pinTintColor = UIColor.blue
+        }
+        if annotation.title! == "송상현광장" {
+            leftIconView.image = UIImage(named:picarray[2] )
+            annotationView?.pinTintColor = UIColor.black
+        }
+        annotationView?.leftCalloutAccessoryView = leftIconView
+        
+        return annotationView
 
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let viewAnno = view.annotation //as! ViewPoint
+        let placeName = viewAnno?.title
+        let placeInfo = viewAnno?.subtitle
+        
+        let ac = UIAlertController(title: placeName!, message: placeInfo!, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(ac, animated: true, completion: nil)
+    }
+    
     func locationtocenter(){
         
         let center = CLLocationCoordinate2DMake(36.166197,129.072594)
